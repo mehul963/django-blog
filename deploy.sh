@@ -6,7 +6,7 @@
 
 # Install requirements
 echo "[BUILD STARTED]"
-pip install -r requirement.txt
+pip install -r requirements.txt
 echo "[REQUIREMENTS INSTALLED]"
 # Collect static files
 python manage.py collectstatic --noinput
