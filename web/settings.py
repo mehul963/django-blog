@@ -30,9 +30,6 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 AUTH_USER_MODEL="blog.User"
 
 
-# CSRF_TRUSTED_ORIGINS=['https://8000-cs-513293748685-default.cs-asia-southeast1-ajrg.cloudshell.dev']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -56,7 +53,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'web.urls'
 
 TEMPLATES = [
     {
