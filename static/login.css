@@ -1,0 +1,89 @@
+body{
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+.container{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: fixed;
+    /* background: linear-gradient(126deg, #e30101,blueviolet); */
+    padding: 50px;
+    border-radius: 10px;
+    width: 70%;
+    box-shadow: 20px 39px 100px rgb(0 0 0 / 50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.container input{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 3px 10px;
+    width: 90%;
+}
+form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+  }
+  
+  input[type="text"], 
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: lightblue;
+    color: white;
+    cursor: pointer;
+    margin-bottom:10px;
+  }
+
+body{
+    background-color: rgb(51, 35, 35);
+}
+body::after {
+    content: '';
+    background: linear-gradient(126deg, #e30101,blueviolet);
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    clip-path: circle(30% at right 70%);
+    backdrop-filter: blur(5px);
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+body::before {
+    content: '';
+    background: linear-gradient(126deg, #e30101,rgb(198, 226, 43));
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    clip-path: circle(40% at left 0%);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+@media (max-width:500px) {
+    .container{
+        width: 80%;
+        height: 60%;
+        padding: 40px;
+    }
+}

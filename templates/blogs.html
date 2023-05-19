@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <!-- <script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV" crossorigin="anonymous"></script> -->
+    <script src='{% static "htmx.min.js" %}'></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div id='prompt'></div>
+    <nav class="flex-container">
+        <div class="item brand_name" name='brand_name'>My Blog</div>
+        <div class="item" name='brand_name'>About</div>
+        <div style="display:flex; gap:10px" class="right">
+            <div class='suggetions' id='suggetions-div'>
+                <input onmouseenter="show()" hx-header="{X-CSRFToken:'{{csrf_token}}'" class="search_bar" name='search' hx-get='/search' hx-target="#sugg-links" hx-trigger="keyup changed delay:500ms" ></input>
+                <div tabindex="0" onmouseout="hide()" onmouseover="show()" class="sugg-links" id='sugg-links'></div>
+            </div>
+            {% if user.is_authenticated %}
+                <a href='/logout' class="item link">Logout</a>
+            {% else %}
+            <a href='/signup' class="item link">Signup</a>
+            <a href='/login' class="item link">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    {{blog|safe}}
+
+
+</body>
+<script>
+    function show(){
+        document.getElementById("sugg-links").style.display="block"
+        document.getElementById("suggetions-div").style.backgroundColor="rgb(77, 51, 51)"
+    }
+    function hide(){
+        document.getElementById("sugg-links").style.display="none"
+        document.getElementById("suggetions-div").style="background-color:"
+    }
+</script>
+
+</html>
