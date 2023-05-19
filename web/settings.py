@@ -25,13 +25,13 @@ SECRET_KEY = 'up^=0b2(u*rqi)bnpoy)uo_h0ymu-cj%t)v76uy*h$ro7-e^of'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 AUTH_USER_MODEL="blog.User"
 
 
 # CSRF_TRUSTED_ORIGINS=['https://8000-cs-513293748685-default.cs-asia-southeast1-ajrg.cloudshell.dev']
-CSRF_TRUSTED_ORIGINS=['https://c175-34-124-150-90.ngrok.io','https://8000-cs-513293748685-default.cs-asia-southeast1-ajrg.cloudshell.dev']
+
 
 # Application definition
 
@@ -74,7 +74,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'web.wsgi.application'
+# WSGI_APPLICATION = 'web.wsgi.application'
+WSGI_APPLICATION = 'web.wsgi.app'
+
+ROOT_URLCONF = 'web.urls'
+
 
 
 # Database
